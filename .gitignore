@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+
+# Node
+node_modules/
+.next/
+
+# Data - never commit raw PDFs or extracted data
+data/
+!_data/.gitkeep
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Playwright browsers
+ms-playwright/
+
+# Ollama models (if stored locally)
+ollama/
