@@ -50,9 +50,9 @@ Status values: `pending` | `in_progress` | `complete` | `failed`
 
 ## IRDAI — UIN Lifecycle
 
-| Source | URL | Status |
-|--------|-----|--------|
-| IRDAI Product Listing Portal | irdai.gov.in per-insurer document-detail pages | pending |
+| Source | URL | Status | Notes |
+|--------|-----|--------|-------|
+| IRDAI Health Products Listing | irdai.gov.in/health-insurance-products | complete | 1,099 records, 1,082 UIN bases, 32 insurers. Scraped via public listing (intranet XLSX behind firewall). Names normalized. |
 
 ## Local Data Directory
 
