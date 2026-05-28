@@ -1,0 +1,24 @@
+[project]
+name = "insurance-agent-backend"
+version = "0.1.0"
+description = "Insurance Intelligence Agent — Backend"
+requires-python = ">=3.9"
+
+dependencies = [
+    "google-genai",
+    "pypdf",
+    "pdfplumber",
+    "pydantic",
+    "python-dotenv",
+    "httpx",
+    "playwright",
+    "openpyxl",
+    "tqdm",
+]
+
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]

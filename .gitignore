@@ -18,8 +18,8 @@ node_modules/
 .next/
 
 # Data - never commit raw PDFs or extracted data
-data/
-!_data/.gitkeep
+data/*
+!data/.gitkeep
 
 # IDE
 .idea/

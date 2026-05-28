@@ -5,7 +5,7 @@
 | Decision | Choice | Rationale |
 |----------|--------|-----------|
 | Agent framework | Custom (Google GenAI SDK) | No LangChain bloat, direct tool control, lightweight |
-| Embedding model | Voyage-2 (1536d) | Free tier (100M tokens/mo), high quality, no infra |
+| Embedding model | Voyage-4-lite (1024d) | Free tier (200M tokens), 32K context, shares embedding space with voyage-4/4-large |
 | Vector DB | Supabase pgvector | Persistent across deployments, same platform as data, no separate service |
 | Extraction model | Gemini 2.5 Flash | Native PDF vision, handles tables and layouts, generous free tier |
 | Agent model (primary free) | Groq Llama 3.3 70B | Free API, fast inference, excellent reasoning, no local resource use |
