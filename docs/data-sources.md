@@ -108,6 +108,33 @@ When the same UIN exists as both an IRDAI reference copy and a website policy wo
 
 Files classified as `non_health` or `corrupt` are moved to `policy_data/_pruned/` (never deleted) to reduce storage. 65 files (200.6 MB) are currently pruned.
 
+## Supabase Schema
+
+Seeded from `uin_lifecycle.json` via `backend/scripts/seed_supabase.py`. Tables:
+
+| Table | Rows | Purpose |
+|-------|------|---------|
+| `insurers` | 32 | Insurer reference (code, name) |
+| `products` | 1,082 | UIN base level (product name, line of business) |
+| `product_versions` | 1,084 | Individual UIN filings (status, source paths, extraction flags) |
+| `policy_features` | 0 | 60+ structured extraction fields (JSONB) — populated in Phase 1 |
+| `policy_chunks` | 0 | RAG chunks with VECTOR(1024) — populated in Phase 2 |
+| `circulars` | 0 | IRDAI circular metadata |
+| `circular_chunks` | 0 | Circular RAG chunks with VECTOR(1024) |
+| `irdai_historical` | 0 | Structured IRDAI annual report data |
+| `conversations` | 0 | Chat sessions |
+| `messages` | 0 | Individual messages with token tracking |
+| `search_logs` | 0 | Usage analytics |
+| `chunking_configs` | 0 | Reproducible chunking parameters |
+
+### Seed Script
+
+```bash
+.venv/bin/python backend/scripts/seed_supabase.py
+```
+
+Reads `data/uin_lifecycle.json` and idempotently populates insurers → products → product_versions. Handles duplicate UINs (13 in source data) and maps PDF source paths from `policy_index.json`.
+
 ## Local Data Directory
 
 All downloaded PDFs and extracted data live in `data/` (gitignored). Structure:

@@ -1,14 +1,20 @@
 # Phases — Living Implementation Plan
 
 ## Phase 0 — Foundation: Docs, Data Pruning & Schema Design
-**Status: not started**
+**Status: complete**
 
-Initialize docs/ folder, project setup, IRDAI UIN lifecycle scraper, IRDAI historical performance scraper, PDF audit & classification, Supabase schema design.
+- [x] Docs initialized (architecture, data-sources, decisions, phases, setup)
+- [x] Project setup (venv, deps, Playwright, Ollama, 3 API keys)
+- [x] IRDAI UIN lifecycle scraper (1,082 products, 1,099 versions, 32 insurers)
+- [x] IRDAI historical performance scraper
+- [x] PDF audit & classification (1,067 PDFs → 781 policy wordings, 119 circulars, 65 pruned)
+- [x] Supabase schema design & migration (12 tables + pgvector + RLS)
+- [x] Schema seeded (32 insurers, 1,082 products, 1,084 versions)
 
 ## Phase 1 — Feature Extraction Pipeline
 **Status: not started**
 
-Feature schema definition (60+ Pydantic fields), multi-pass extraction engine (Gemini vision), extraction validation and full batch run on all ~700 active policies.
+Feature schema definition (60+ Pydantic fields), multi-pass extraction engine (Gemini vision), extraction validation and full batch run on all ~781 active policies.
 
 ## Phase 2 — RAG Pipeline
 **Status: not started**
